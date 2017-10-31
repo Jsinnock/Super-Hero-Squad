@@ -1,5 +1,6 @@
+import java.util.Observable;
 
-public class Puzzle extends {
+public class Puzzle extends Observable{
 	String roomLocation;
 	String puzzleDescription;
 	String puzzleName;

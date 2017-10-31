@@ -4,7 +4,11 @@ public class ItemPuzzle extends Puzzle{
 	
 	boolean isItemEquipped()
 	{
-		if()
+		if(itemNeeded == "1")
+		{
+			return true;
+		}
+		else return false;
 	}
 	
 }
