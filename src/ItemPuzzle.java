@@ -1,11 +1,11 @@
 
 public class ItemPuzzle extends Puzzle{
 	String itemNeeded;
-	ItemPuzzle(String roomLocation, String puzzleDescription, String puzzleName, String itemNeeded) {
-		super(roomLocation, puzzleDescription, puzzleName);
+	ItemPuzzle(String roomLocation, String puzzleDescription, String puzzleName, String puzzleHint, String itemNeeded) {
+		super(roomLocation, puzzleDescription, puzzleName, puzzleHint);
 		this.itemNeeded = itemNeeded;
 	}
-	boolean isItemEquipped()
+	boolean isItemInInventory()
 	{
 		if(itemNeeded == "1")
 		{

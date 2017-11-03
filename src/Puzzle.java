@@ -4,12 +4,14 @@ public class Puzzle extends Observable{
 	String roomLocation;
 	String puzzleDescription;
 	String puzzleName;
+	String puzzleHint;
 	
-	Puzzle(String roomLocation, String puzzleDescription, String puzzleName)
+	Puzzle(String roomLocation, String puzzleDescription, String puzzleName, String puzzleHint)
 	{
 		this.roomLocation = roomLocation;
 		this.puzzleDescription = puzzleDescription;
 		this.puzzleName = puzzleName;
+		this.puzzleHint = puzzleHint;
 	}
 	
 	public void setRoomLocation(String roomLocation)
@@ -26,6 +28,8 @@ public class Puzzle extends Observable{
 	{
 		this.puzzleName = puzzleName;
 	}
+	
+	
 	
 	
 }
