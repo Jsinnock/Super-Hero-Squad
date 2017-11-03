@@ -1,20 +1,39 @@
 public class Rooms {
-	private int roomNumber;
-	private String roomDescription;
-	
-	private int getRoomNumber() {
-		return roomNumber;
+
+	private String[] name;
+
+	private String[] description;
+
+	private byte[] exits[];
+
+	private byte[] monster;
+
+	private ItemDrop[] items;
+
+	private Puzzle[] puzzle;
+
+	public String getName(byte id) {
+		return name[id];
 	}
-	
-	private void setRoomNumber() {
-		this.roomNumber = roomNumber;
+
+	public String getDescr(byte id) {
+		return description[id];
 	}
-	
-	private String getRoomDescription() {
-		return roomDescription;
+
+	public byte[] getExits(byte id) {
+		return exits[id];
 	}
-	
-	private void setRoomDescription() {
-		this.roomDescription = roomDescription;
+
+	public byte getMonster(byte id) {
+		return monster[id];
 	}
+
+	public ItemDrop getItems(byte id) {
+		return items[id];
+	}
+
+	public Puzzle getPuzzle(byte id) {
+		return puzzle[id];
+	}
+
 }
