@@ -1,2 +1,11 @@
-
+/Classes/
+/CommandMenuGUI.class
+/ItemDrop.class
+/ItemPuzzle.class
+/Puzzle.class
+/PuzzlesList.class
+/Rooms.class
 /Stats.class
+/commandMenu.class
+/java/
+/RoomsList.class

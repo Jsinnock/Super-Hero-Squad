@@ -6,13 +6,13 @@ public class Stats {
 	int itemsCollected = 0;
 	int itemsUsed =0;
 	
-	public Stats(int health, int kills, int roomsDiscovered, itemsCollected, int itemsUsed)
+	public Stats(int health, int kills, int roomsDiscovered, int itemsCollected, int itemsUsed)
 	{
 		this.health = health;
 		this.kills = kills;
 		this.roomsDiscovered = roomsDiscovered;
 		this.itemsCollected = itemsCollected;
-		this.itemUsed = itemsUsed;
+		this.itemsUsed = itemsUsed;
 	}
 	
 	public void setHealth(int health){
