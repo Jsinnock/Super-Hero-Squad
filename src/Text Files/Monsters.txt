@@ -1,0 +1,72 @@
+Grotesque
+A mammoth-sized being with a belly bigger than his appetite. Bile is seen running down his face and stomach. A player will take 2X damage if plastic tray shield not equipped.
+Projectile Vomit
+10,5
+8
+140
+1
+Mysterious vial, Wrench
+.8
+Abberrant Doctor
+A humanoid figure that doesn’t seem so human anymore. Wearing a respirator mask and bloody scrubs
+Syringe
+5
+4
+100
+.4
+Med pack, Syringe
+.8
+Deranged Scientist
+A man wearing a white lab coat with dark red stains splattered on the front. His arms seem to be way too long for his body, and they are very thin; it’s almost like he had some sort of rapid growth mutation. His pupils are tiny black dots in a sea of red
+Energy Blaster
+5
+3
+100
+.6
+Med pack, ammo(1)
+.8
+Prowler
+A four-legged creature with slick, black skin and patches of white hair. It resembles the form of a jaguar, but it has no eye sockets and a giant mouth. Its teeth look like they could crush your bones easily,and it has long, razor sharp claws the color of obsidian.
+Bite, claws
+9
+6
+120
+.75
+Med pack(2)
+.8
+Brawler
+A mutated crew member with a hump on its back, walking on two legs. It has facial appearance of a wild boar and the body type of a gorilla
+Fist, Headbutt, Strength
+10
+6
+120
+.8
+Bandage, Batteries
+.8
+Bass Face
+A mutated chef, still fully dressed in its attire, with its mouth unnaturally opened as wide to the point that it could seemingly swallow someone's entire head whole. Its teeth are similar to piranha’s teeth. 
+Teeth, Kitchen Knife
+7
+3
+110
+.8
+Bandage, Batteries, Kitchen Knife
+.8
+Chernabog
+A monstrous bat like creature, it’s fur wild and intimidating almost like a mane framing its demonic wolf like face. It’s arms extending into large expanses of web-like skin tipped with razor sharp claws. It lurks on the ceilings and is sensitive to light. 
+Claw, Bite, Sonic Screech
+8
+4
+100
+.8
+8A
+.7
+Wendigo
+A truly immense ape like creature but more demonic and otherworldly, with twisted antlers extending from its head. It seems disturbingly intelligent and you can feel the malice radiating from it, perhaps there’s something that could weaken it
+Charge, Crush
+10
+7
+120
+1
+null
+.5
