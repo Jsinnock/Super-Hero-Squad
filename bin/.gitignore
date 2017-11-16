@@ -1,15 +1,13 @@
-/Classes/
-/CommandMenuGUI.class
-/ItemDrop.class
+/.metadata/
+/Text Files/
+/controllers/
+/databases/
+/models/
+/view/
+/AnswerPuzzle.class
 /ItemPuzzle.class
+/Monster.class
 /Puzzle.class
 /PuzzlesList.class
 /Rooms.class
-/Stats.class
-/commandMenu.class
-/java/
 /RoomsList.class
-/controllers/
-/view/
-/databases/
-/models/

@@ -1,6 +1,8 @@
+package models;
 import java.util.Observable;
 
 public class Rooms extends Observable{
+	private String roomId;
 	private String nameList;
 	private String descriptionList;
 	private String exitsList;
@@ -8,9 +10,10 @@ public class Rooms extends Observable{
 	private String itemsList;
 	private String puzzleList;
 	
-	Rooms(String nameList, String descriptionList, String exitsList, String monstersList,
+	Rooms(String roomId, String nameList, String descriptionList, String exitsList, String monstersList,
 			String itemsList, String puzzleList)
 	{
+		this.roomId = roomId;
 		this.nameList = nameList;
 		this.descriptionList = descriptionList;
 		this.exitsList = exitsList;
@@ -65,6 +68,26 @@ public class Rooms extends Observable{
 	
 	public void setPuzzleList(String puzzleList) {
 		this.puzzleList = puzzleList;
+	}
+
+	public static Rooms getRooms() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public byte[] getExits(byte room) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getDescription(byte toRoom) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getName(byte b) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/**

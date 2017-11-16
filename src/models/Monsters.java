@@ -1,5 +1,6 @@
+package models;
 
-public class Monster{
+public class Monsters{
 
 	private String name;
 	private String desc;
@@ -12,7 +13,7 @@ public class Monster{
 	private int flee;
 	
 	
-	public Monster(String n,String d,String w,int s, int a, int h,int ac, String wd,int f)
+	public Monsters(String n,String d,String w,int s, int a, int h,int ac, String wd,int f)
 	{
 		name = n;
 		desc = d;
@@ -61,5 +62,9 @@ public static void main( String args[] )
 {
 	
 	
+}
+public static double getEscapeChance(byte monsterID) {
+	// TODO Auto-generated method stub
+	return 0;
 }
 }

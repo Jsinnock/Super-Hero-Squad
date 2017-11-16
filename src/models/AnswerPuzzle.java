@@ -1,3 +1,4 @@
+package models;
 
 public class AnswerPuzzle extends Puzzle{
 	String puzzleAnswer;

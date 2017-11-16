@@ -2,7 +2,7 @@ package models;
 
 import java.util.Observable;
 
-import databases.Rooms;
+
 import view.StatsPanel;
 
 public class Stats {
