@@ -7,4 +7,15 @@ public class AnswerPuzzle extends Puzzle{
 		this.puzzleAnswer = puzzleAnswer;
 	}
 	
+	public void setPuzzleAnswer(String puzzleAnswer)
+	{
+		this.puzzleAnswer = puzzleAnswer;
+	}
+	
+	public String getPuzzleAnswer()
+	{
+		return puzzleAnswer;
+	}
+	
+	
 }

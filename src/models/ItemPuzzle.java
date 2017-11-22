@@ -6,13 +6,15 @@ public class ItemPuzzle extends Puzzle{
 		super(puzzleName, roomLocation, puzzleDescription, puzzleHint, puzzleType);
 		this.itemNeeded = itemNeeded;
 	}
-	boolean isItemInInventory()
+	
+	public void setItemNeeded(String itemNeeded)
 	{
-		if(itemNeeded == "1")
-		{
-			return true;
-		}
-		else return false;
+		this.itemNeeded = itemNeeded;
+	}
+	
+	public String getItemNeeded()
+	{
+		return itemNeeded;
 	}
 	
 }

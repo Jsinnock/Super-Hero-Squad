@@ -1,0 +1,44 @@
+Puzzle 1
+A1
+Enter Password:
+The password must be somewhere in this room
+Answer
+BeingADoctorRocks73Xx
+Puzzle 3
+A11
+Who could have thought that without this you would become so weak?
+In Earth we take this for granted. Apple falling on your head?
+Answer
+Gravity
+Puzzle 4
+B6
+Enter Code:
+4 digit code.
+What year is it again?
+Answer
+2017
+Puzzle 5B
+C9
+Enter Validation Code
+The key you seek is on a crew member somewhere in this sector. The code can be found somewhere within the recreation room.
+Answer
+7201
+Puzzle 7
+D7
+As you look at the screen you see a long list of incomprehensible numbers and letters that appear to be a code of some kind. You notice a rather hard to ignore gap in the code. 1734-6732-1476-C327-8977-7643-____-V731-1788-8732-4767-8976-4376
+Something reminds you of the wall of Hallway D8.
+Answer
+T732
+Puzzle 8
+D2
+As you examine the still intact incubator you notice slots where you could possibly place 3 vials of some kind and you notice a glowing yellow vial and pick it up
+Maybe you should look for the other vials
+Item
+10A 11A 12A
+Puzzle 5A
+C9
+Please Enter the Captain's Key.
+That body in C4 might have something to do with this.
+Item
+9A	
+
