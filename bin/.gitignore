@@ -1,13 +1,3 @@
-/.metadata/
-/Text Files/
-/controllers/
-/databases/
-/models/
 /view/
-/AnswerPuzzle.class
-/ItemPuzzle.class
-/Monster.class
-/Puzzle.class
-/PuzzlesList.class
-/Rooms.class
-/RoomsList.class
+/controllers/
+/models/

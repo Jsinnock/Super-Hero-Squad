@@ -2,8 +2,8 @@ package models;
 
 public class AnswerPuzzle extends Puzzle{
 	String puzzleAnswer;
-	AnswerPuzzle(String roomLocation, String puzzleDescription, String puzzleName, String puzzleHint, String puzzleAnswer) {
-		super(roomLocation, puzzleDescription, puzzleName, puzzleHint);
+	AnswerPuzzle(String puzzleName, String roomLocation, String puzzleDescription,  String puzzleHint, String puzzleType, String puzzleAnswer) {
+		super(puzzleName, roomLocation, puzzleDescription, puzzleHint, puzzleType);
 		this.puzzleAnswer = puzzleAnswer;
 	}
 	

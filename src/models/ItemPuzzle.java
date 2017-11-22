@@ -2,8 +2,8 @@ package models;
 
 public class ItemPuzzle extends Puzzle{
 	String itemNeeded;
-	ItemPuzzle(String roomLocation, String puzzleDescription, String puzzleName, String puzzleHint, String itemNeeded) {
-		super(roomLocation, puzzleDescription, puzzleName, puzzleHint);
+	ItemPuzzle(String puzzleName, String roomLocation, String puzzleDescription,  String puzzleHint, String puzzleType, String itemNeeded) {
+		super(puzzleName, roomLocation, puzzleDescription, puzzleHint, puzzleType);
 		this.itemNeeded = itemNeeded;
 	}
 	boolean isItemInInventory()
