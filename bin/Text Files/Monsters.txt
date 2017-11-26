@@ -17,8 +17,7 @@ Syringe
 Med pack, Syringe
 .8
 Deranged Scientist
-A man wearing a white lab coat with dark red stains splattered on the front. His arms seem to be way too long for his body, and they are very thin; it’s almost like he had some sort of rapid growth mutation. His pupils are tiny black dots in a sea of red
-Energy Blaster
+A man wearing a white lab coat with dark red stains splattered on the front. His arms seem to be way too long for his body, and they are very thin; it’s almost like he had some sort of rapid growth mutation. His pupils are tiny black dots in a sea of redEnergy Blaster
 5
 3
 100
@@ -26,8 +25,7 @@ Energy Blaster
 Med pack, ammo(1)
 .8
 Prowler
-A four-legged creature with slick, black skin and patches of white hair. It resembles the form of a jaguar, but it has no eye sockets and a giant mouth. Its teeth look like they could crush your bones easily,and it has long, razor sharp claws the color of obsidian.
-Bite, claws
+A four-legged creature with slick, black skin and patches of white hair. It resembles the form of a jaguar, but it has no eye sockets and a giant mouth. Its teeth look like they could crush your bones easily,and it has long, razor sharp claws the color of obsidian.Bite, claws
 9
 6
 120
