@@ -62,7 +62,7 @@ public class Monster{
 		try
 		{
 			
-			File mediaFile = new File("Monster.txt");
+			File mediaFile = new File("Monsters.txt");
 			
 			Scanner fileReader = new Scanner(mediaFile);
 			
