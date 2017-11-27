@@ -22,7 +22,7 @@ A man wearing a white lab coat with dark red stains splattered on the front. His
 3
 100
 .6
-Med pack, ammo(1)
+Med pack, ammo
 .8
 Prowler
 A four-legged creature with slick, black skin and patches of white hair. It resembles the form of a jaguar, but it has no eye sockets and a giant mouth. Its teeth look like they could crush your bones easily,and it has long, razor sharp claws the color of obsidian.Bite, claws
@@ -30,7 +30,7 @@ A four-legged creature with slick, black skin and patches of white hair. It rese
 6
 120
 .75
-Med pack(2)
+Med pack , Med pack
 .8
 Brawler
 A mutated crew member with a hump on its back, walking on two legs. It has facial appearance of a wild boar and the body type of a gorilla
