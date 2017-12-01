@@ -5,89 +5,89 @@ description;;
 Exits;;puzzle;;
 has a monster;;monster ID;;Items ID
 
-A01;;Staircase Sector A>B;;Using only the flickering lights from the LEDs in your suit, you carefully make your way up the stairs holding onto the railing as your boots grip the bloody floor. At the top, there are two large automatic double doors to the east opening and closing as if being blocked by something.;;A2,B01,C01,D01;; ;;false;; ;; 
+A01;;Staircase Sector A>B;;Using only the flickering lights from the LEDs in your suit, you carefully make your way up the stairs holding onto the railing as your boots grip the bloody floor. At the top, there are two large automatic double doors to the east opening and closing as if being blocked by something.;;A2,B01,C01,D01;; ;;false;; ;;C0;;
 
-A2;;Lounge 1;;As you enter the dimly lit room, a feeling of normalcy overcomes you. This was once a social place full of life as you see a tv flickering and half eaten dishes on the table. Whoever was present left this place with urgency.;;A01,A3;; ;;false;; ;;C1
+A2;;Lounge 1;;As you enter the dimly lit room, a feeling of normalcy overcomes you. This was once a social place full of life as you see a tv flickering and half eaten dishes on the table. Whoever was present left this place with urgency.;;A01,A3;; ;;false;; ;;C1;;
 
-A3;;Intensive Care 3;;A vast room full of raggedy beds and worn blood-stained medical rags. Most of the beds are occupied by what seems to be empty vessels of the crew. To the west is a supply closet that could contain useful supplies.;;A2,A4,A10,A12;; ;;false;; ;; 
+A3;;Intensive Care 3;;A vast room full of raggedy beds and worn blood-stained medical rags. Most of the beds are occupied by what seems to be empty vessels of the crew. To the west is a supply closet that could contain useful supplies.;;A2,A4,A10,A12;; ;;false;; ;;C2;;
 
-A4;;Operating Viewing Room;;A very long room filled with mostly shattered windows. Peering through the broken glass, you witness an automated operating machine on the fritz. Perhaps the room contains details on what happened to the crew.;;A3,A5,A6;; ;;false;; ;; 
+A4;;Operating Viewing Room;;A very long room filled with mostly shattered windows. Peering through the broken glass, you witness an automated operating machine on the fritz. Perhaps the room contains details on what happened to the crew.;;A3,A5,A6;; ;;false;; ;;C0;;
 
-A5;;Operating Room;;Entering the oddly shaped room, the self operating robot seems to be attempting to examine the remains of what appears to be a skeleton with a perfectly intact plastic cafeteria tray still being clenched.;;A4;;P1;;false;; ;; 
+A5;;Operating Room;;Entering the oddly shaped room, the self operating robot seems to be attempting to examine the remains of what appears to be a skeleton with a perfectly intact plastic cafeteria tray still being clenched.;;A4;;P1;;false;; ;; ;;
 
-A6;;Hallway 2;;A surprisingly lit corridor. Illuminated on the wall is a medi-kit.;;A4,A7;; ;;false;; ;;C0
+A6;;Hallway 2;;A surprisingly lit corridor. Illuminated on the wall is a medi-kit.;;A4,A7;; ;;false;; ;;C0;;
 
-A7;;Lobby 1;;A massive room with the floors covered in ceiling tiles from where part of the ceiling caved in. The tables and chairs are scattered along the room.;;A6,A8;; ;;false;; ;;C2
+A7;;Lobby 1;;A massive room with the floors covered in ceiling tiles from where part of the ceiling caved in. The tables and chairs are scattered along the room.;;A6,A8;; ;;false;; ;;C2;;
 
-A8;;Hallway 1;;You walk this long hallway until you intersect a large slimy substance that appears to awaken.;;A7,A9;; ;;true;;M1;; 
+A8;;Hallway 1;;You walk this long hallway until you intersect a large slimy substance that appears to awaken.;;A7,A9;; ;;true;;M1;; ;;
 
-A9;;Intensive Care Overflow 1;;After defeating the grotesque being, you gain access to a seemingly untouched room with beds that still seem to be made.;;A8,A10;;P0;;false;; ;; 
+A9;;Intensive Care Overflow 1;;After defeating the grotesque being, you gain access to a seemingly untouched room with beds that still seem to be made.;;A8,A10;;P0;;false;; ;; ;;
 
-A10;;Intensive Care Overflow 2;;Unlike it’s adjoined room, this room seems as if a struggle broke out. There are claw marks running across the thick metal walls and a stench of sewage in the air. The bathroom to the right could be contributing to the smell.;;A9,A11,A3;; ;;false;; ;;C2
+A10;;Intensive Care Overflow 2;;Unlike it’s adjoined room, this room seems as if a struggle broke out. There are claw marks running across the thick metal walls and a stench of sewage in the air. The bathroom to the right could be contributing to the smell.;;A9,A11,A3;; ;;false;; ;;C2;;
 
-A11;;Medical Wing Bathroom;;The showers appear to still be running, and the flooded bathroom makes it hard to shift through the stalls. There seems to be a noise coming from one of the stalls.;;A10;;P2;;false;; ;; 
+A11;;Medical Wing Bathroom;;The showers appear to still be running, and the flooded bathroom makes it hard to shift through the stalls. There seems to be a noise coming from one of the stalls.;;A10;;P2;;false;; ;; ;;
 
-A12;;Medical Laboratory;;A high-tech facility that has chemistry sets with strange substances in them. A set of notes are laying on the desk with a video log acting as a paper holder. In the corner of the room is a broken glass case with a piece of an earthy material still occupying the case.;;A3;; ;;false;; ;;I0
-
-
-B01;;Hallway;;Upon arrival, there appears to be an unwanted guest lurking at a distance. The lights above the ceiling keeps flickering in and out so you’re not perhaps sure what it maybe until it approaches closer towards your direction.;;A01,B2,B3,B4,B5,B6,B7;; ;;true;;M2;; 
-
-B2;;Bathroom;;The bathroom was public to all crew members and is automated for the most part.;;B01;; ;;false;; ;; 
-
-B3;;Bedroom;;This was where crew members used sleeping pods whenever it was appropriate to go rest.;;B01;; ;;false;; ;; 
-
-B4;;Office;;This was the captain's main office where very important documents/files are kept concealed in the closet and desk drawers.;;B01;;P3;;false;; ;; 
-
-B5;;Planning Room;;This room is where meetings and operations from a select group of people were held. No one is allowed in here unless given/obtaining proper permission.;;B01;; ;;false;; ;; 
-
-B6;;Kitchen;;The kitchen was only available for use by cooking staff. Apparently,that’s not the case at this point. Seemingly, food wasn’t the only thing being prepared here. By observing certain ingredients, the virus may have been mixed in with meals being served.;;B01;;P4;;true;;M6;; 
-
-B7;;Cafeteria;;The cafeteria was available to all crew members during open hours unless otherwise. Now it’s just open to any and everything. Due to the lack visibility there is in the dark, it’s fairly difficult to recognize anything around.;;B01;; ;;false;; ;; 
+A12;;Medical Laboratory;;A high-tech facility that has chemistry sets with strange substances in them. A set of notes are laying on the desk with a video log acting as a paper holder. In the corner of the room is a broken glass case with a piece of an earthy material still occupying the case.;;A3;; ;;false;; ;;I0;;
 
 
-C01;;Short Hallway;;You enter a small, dimly lit hallway. The low ceiling feels like a weight on the top of your head. There are two doors on opposite sides of the hallway, but you can't see anything beyond that.;;A01,C2,C9;; ;;false;; ;; 
+B01;;Hallway;;Upon arrival, there appears to be an unwanted guest lurking at a distance. The lights above the ceiling keeps flickering in and out so you’re not perhaps sure what it maybe until it approaches closer towards your direction.;;A01,B2,B3,B4,B5,B6,B7;; ;;true;;M2;; ;;
 
-C2;;Lounge;;A spacious, comfortable looking room. Couches and chairs line one wall, facing a large screen. There are tables scattered throughout the room that look like they can be used for a variety of things: card games, eating, meetings, or whatever else these people did in their free time.;;C01,C3,C5;; ;;false;; ;; 
+B2;;Bathroom;;The bathroom was public to all crew members and is automated for the most part.;;B01;; ;;false;; ;; ;;
 
-C3;;Bathroom;;A long, narrow bathroom with a few stalls and sinks. One of the sinks appears to have been broken, and the slow drip of water from the pipe echoes in the quiet room.;;C2;; ;;false;; ;;C0
+B3;;Bedroom;;This was where crew members used sleeping pods whenever it was appropriate to go rest.;;B01;; ;;false;; ;;C2;;
 
-C4;;Showers;;Darkness is the only thing you register when walking into this room. You take out your flashlight and turn it on. You sweep the white cone of light across the room and notice a human-shaped form lying facedown below one of the showerheads.;;C5,C6;; ;;false;; ;;I01
+B4;;Office;;This was the captain's main office where very important documents/files are kept concealed in the closet and desk drawers.;;B01;;P3;;false;; ;; ;;
 
-C5;;North Hall;;This long, twisted hallway has several signs posted on the walls with arrows accompanied by some foreign language. These directions are useless to you, but you keep calm and move on.;;C2,C4,C6,C8,C9;; ;;false;; ;; 
+B5;;Planning Room;;This room is where meetings and operations from a select group of people were held. No one is allowed in here unless given/obtaining proper permission.;;B01;; ;;false;; ;;C2;;
 
-C6;;Recreation Room;;You open the doors to a huge room with firm rubber floors. The walls are lined with all types of exercise equipment, from stationary bikes to weight lifting benches.;;C4,C5,C7,C10;; ;;false;; ;; 
+B6;;Kitchen;;The kitchen was only available for use by cooking staff. Apparently,that’s not the case at this point. Seemingly, food wasn’t the only thing being prepared here. By observing certain ingredients, the virus may have been mixed in with meals being served.;;B01;;P4;;true;;M6;; ;;
 
-C7;;Locker Room;;A standard locker room, complete with walls of personal lockers and a row of benches in front of them. The room has the overwhelming smell of bad body odor.;;C6;; ;;false;; ;; 
-
-C8;;Laboratory;;A large, rectangular room that is loaded with all types of research and experimentation equipment. Several flasks and beakers with unknown liquids in them are left on some tables by one wall.;;C5,C10;; ;;false;; ;; 
-
-C9;;Storage Room;;This room has 6 fairly large storage compartments, almost like mini-garages. 4 of them are open, but 2 are closed and appear to be locked. There is a small electronic keypad in the middle of the 2 locked doors.;;C01,C5;;P5;;false;; ;; 
-
-C10;;Captain’s Hallway;;A long, L-shaped hallway with a couple of flickering lights on the ceiling and solid metal floors covered in debris. A 4-foot wide hole in the southern wall shows a glimpse of a room with similar debris and destruction.;;C6,C8,C11;; ;;false;; ;;C0
-
-C11;;Command Room;;You enter a large room filled with darkness. From what you can see, the whole of the room is mostly destroyed, it looks like a big skirmish happened. The far wall is filled with knobs, dials, switches, and buttons, like it was the control room for this sector of the ship. Everything looks unusable at this point, however.;;C10;;P6;;false;; ;;C0,C2
+B7;;Cafeteria;;The cafeteria was available to all crew members during open hours unless otherwise. Now it’s just open to any and everything. Due to the lack visibility there is in the dark, it’s fairly difficult to recognize anything around.;;B01;; ;;false;; ;;C0;;
 
 
-D01;;Cryo-Storage;;You enter a massive chamber and instantly notice how cold it is. Looking around you see many drawers and compartments with control panels, all the compartments are kept at extremely low precise temperatures to preserve bio-materials.;;A01,D2,D4;; ;;false;; ;; 
+C01;;Short Hallway;;You enter a small, dimly lit hallway. The low ceiling feels like a weight on the top of your head. There are two doors on opposite sides of the hallway, but you can't see anything beyond that.;;A01,C2,C9;; ;;false;; ;;C1;;
 
-D2;;Incubation;;You see 3 large machines with large round glass tanks stretching from the floor to the ceiling, one of them is completely demolished, another looks beyond repair and oozing some unidentifiable bio-waste, and the third appears like it hasn’t been used in ages. Looking at the large tanks, it looks like something might have been grown in these…;;D01,D3;;P8;;false;; ;; 
+C2;;Lounge;;A spacious, comfortable looking room. Couches and chairs line one wall, facing a large screen. There are tables scattered throughout the room that look like they can be used for a variety of things: card games, eating, meetings, or whatever else these people did in their free time.;;C01,C3,C5;; ;;false;; ;;C0;;
 
-D3;;Lobby;;An area used more to connect important rooms to each other, you feel very disoriented by the excessive flickering lights;;D2,D4,D5;; ;;false;; ;; 
+C3;;Bathroom;;A long, narrow bathroom with a few stalls and sinks. One of the sinks appears to have been broken, and the slow drip of water from the pipe echoes in the quiet room.;;C2;; ;;false;; ;;C0;;
+
+C4;;Showers;;Darkness is the only thing you register when walking into this room. You take out your flashlight and turn it on. You sweep the white cone of light across the room and notice a human-shaped form lying facedown below one of the showerheads.;;C5,C6;; ;;false;; ;;I01;;
+
+C5;;North Hall;;This long, twisted hallway has several signs posted on the walls with arrows accompanied by some foreign language. These directions are useless to you, but you keep calm and move on.;;C2,C4,C6,C8,C9;; ;;false;; ;;C1;;
+
+C6;;Recreation Room;;You open the doors to a huge room with firm rubber floors. The walls are lined with all types of exercise equipment, from stationary bikes to weight lifting benches.;;C4,C5,C7,C10;; ;;false;; ;;C1;;
+
+C7;;Locker Room;;A standard locker room, complete with walls of personal lockers and a row of benches in front of them. The room has the overwhelming smell of bad body odor.;;C6;; ;;false;; ;;C2;;
+
+C8;;Laboratory;;A large, rectangular room that is loaded with all types of research and experimentation equipment. Several flasks and beakers with unknown liquids in them are left on some tables by one wall.;;C5,C10;; ;;false;; ;;C0;;
+
+C9;;Storage Room;;This room has 6 fairly large storage compartments, almost like mini-garages. 4 of them are open, but 2 are closed and appear to be locked. There is a small electronic keypad in the middle of the 2 locked doors.;;C01,C5;;P5;;false;; ;; ;;
+
+C10;;Captain’s Hallway;;A long, L-shaped hallway with a couple of flickering lights on the ceiling and solid metal floors covered in debris. A 4-foot wide hole in the southern wall shows a glimpse of a room with similar debris and destruction.;;C6,C8,C11;; ;;false;; ;;C0;;
+
+C11;;Command Room;;You enter a large room filled with darkness. From what you can see, the whole of the room is mostly destroyed, it looks like a big skirmish happened. The far wall is filled with knobs, dials, switches, and buttons, like it was the control room for this sector of the ship. Everything looks unusable at this point, however.;;C10;;P6;;false;; ;;C0;;
+
+
+D01;;Cryo-Storage;;You enter a massive chamber and instantly notice how cold it is. Looking around you see many drawers and compartments with control panels, all the compartments are kept at extremely low precise temperatures to preserve bio-materials.;;A01,D2,D4;; ;;false;; ;;C2
+
+D2;;Incubation;;You see 3 large machines with large round glass tanks stretching from the floor to the ceiling, one of them is completely demolished, another looks beyond repair and oozing some unidentifiable bio-waste, and the third appears like it hasn’t been used in ages. Looking at the large tanks, it looks like something might have been grown in these…;;D01,D3;;P8;;false;; ;;C2
+
+D3;;Lobby;;An area used more to connect important rooms to each other, you feel very disoriented by the excessive flickering lights;;D2,D4,D5;; ;;false;; ;;C0
 
 D4;;DNA Library;;A surprisingly well lit and seemingly well maintained area, you see a huge grid of glowing blue light along the walls going from the floor to the ceiling. The light outlining compartments in the wall, they seem very secure and functional even now until you find one that has malfunctioned, you are able to make it extend fully and you examine the hundreds of tiny vials in this compartment alone, and looking at the labels, they must contain DNA of various organisms. If there’s this many in just one compartment, how many could there be in the dozens of other compartments?;;D01,D3,D6,D5,D8;; ;;false;; ;;I2
 
 D5;;Arboretum;;You are amazed by what you see when you finally enter this massive room. Here in deep space is a thriving eco-system like a huge terrarium. What was likely originally meant to grow and care for plant and maybe even animal life that could be useful to the crew and was once likely a neatly maintained garden has been completely reclaimed by the nature which the crew attempted to tame. Looking around you see what looks like many familiar plants, as well as other more exotic or…alien varieties.;;D3,D4,D8,D7;; ;;true;;M8;; 
 
-D6;;Suspension Chambers;;You enter a long room and along the wall are dozens of pods which seem to be used to place living things in a state of suspended animation so that they can be preserved and reawoken at a much later date, unfortunately they do not appear to be functional thanks to the state of the ship.;;D4;; ;;false;; ;; 
+D6;;Suspension Chambers;;You enter a long room and along the wall are dozens of pods which seem to be used to place living things in a state of suspended animation so that they can be preserved and reawoken at a much later date, unfortunately they do not appear to be functional thanks to the state of the ship.;;D4;; ;;false;; ;;C1
 
 D7;;Arboretum Control;;You enter a large room with many control panels and screens, you can see out a window into the lush terrarium like forest in the Arboretum.;;D5,D8;;P7;;false;; ;; 
 
 D8;;Hallway;;The hallway almost completely dark other than the still functioning lights along the floor, it may be wise to proceed with caution.;;D4,D5,D7,D9;; ;;true;;M7;; 
 
-D9;;Clean Room;;The room was once quite pristine, there are huge vents in the ceiling, this was originally a room used to sanitize crew members but is now no longer functional.;;D8,D10;; ;;false;; ;; 
+D9;;Clean Room;;The room was once quite pristine, there are huge vents in the ceiling, this was originally a room used to sanitize crew members but is now no longer functional.;;D8,D10;; ;;false;; ;;W2
 
-D10;;Lobby;;You enter a lounge-like lobby area introducing you to this secluded section of the ship, what was once a place of relaxation for the members of the crew who worked here is now in disarray.;;D9,D11,D12;; ;;false;; ;; 
+D10;;Lobby;;You enter a lounge-like lobby area introducing you to this secluded section of the ship, what was once a place of relaxation for the members of the crew who worked here is now in disarray.;;D9,D11,D12;; ;;false;; ;;W2
 
-D11;;Bathroom;;Not much to see, simply a bathroom for the people working in this sector.;;D10;; ;;false;; ;; 
+D11;;Bathroom;;Not much to see, simply a bathroom for the people working in this sector.;;D10;; ;;false;; ;;W1
 
 D12;;Head of Bioengineering;;You enter what appears to be a very high tech office or workspace, it looks like it’s gone almost untouched until you arrived, this must have been where whoever managed this sector must have done their job.;;D10;; ;;false;; ;;I3

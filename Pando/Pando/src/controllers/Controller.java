@@ -70,8 +70,14 @@ public class Controller implements ActionListener{
 		} catch (UnsupportedEncodingException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}}
-		if(e.getSource()==frame.getTab().getCMD().getLoadButton()){try {load();} catch (ClassNotFoundException e1) {e1.printStackTrace();}}
+		if(e.getSource()==frame.getTab().getCMD().getLoadButton()){try {load();} catch (ClassNotFoundException e1) {e1.printStackTrace();} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}}
 		if(e.getSource()==frame.getTab().getCMD().getExitButton()){exitGame();}
 		
 		//buttons in the Inventory menu
@@ -101,10 +107,16 @@ public class Controller implements ActionListener{
 		} catch (UnsupportedEncodingException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}}
 		if(e.getSource()==frame.getStart().getLoadGame()){try {
 			load();
 		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}frame.start();}
@@ -117,9 +129,9 @@ public class Controller implements ActionListener{
 	 * add current room to progress(otherwise this is done when a new room is entered)
 	 * record id of current room
 	 * write progress,inventory,co,and stats objects to binary file and save it
-	 * @throws UnsupportedEncodingException 
+	 * @throws IOException 
 	 */
-	private void save() throws UnsupportedEncodingException{
+	private void save() throws IOException{
 		player.getProgress().addRoom(rooms.getID(), rooms.getItemDrop(), !battle, rooms.getMonster());
 		if(profile.save(player,rooms.getID())){frame.getConsole().showText("Save Successful");
 		}else frame.getConsole().showText("Save Unsuccessful");
@@ -128,15 +140,22 @@ public class Controller implements ActionListener{
 	 * read data from file and create progress, inventory, and stats objects, and get the current room id
 	 * create a new player object and room object
 	 * @throws ClassNotFoundException 
+	 * @throws IOException 
 	 */
-	private void load() throws ClassNotFoundException{
+	private void load() throws ClassNotFoundException, IOException{
 		SaveData save=profile.load();
 		if(save != null){
 			player=new Player(save);
 			player.getInv().addObserver(frame.getTab().getINV());
 			player.getStats().addObserver(frame.getTab().getStats());
+			System.out.println(save.getRoomID());
 			rooms=new Room(FileConfig.roomFile,save.getRoomID(),
 					save.getProgress().getItems(save.getRoomID()),save.getProgress().getMonster(save.getRoomID()));
+			updateConsole();//reset the console display
+			if(rooms.isMon()&&!player.getProgress().getMonsterDefeated(rooms.getID())){
+				activateBattle();
+				frame.getConsole().showText(rooms.getMonster().getDescription());
+			}
 		}else frame.getConsole().showText("Load Unsuccessful");
 	}
 
@@ -145,9 +164,9 @@ public class Controller implements ActionListener{
 	 * start in room 1 
 	 * launch the game gui
 	 * make a save file only if one does not already exist
-	 * @throws UnsupportedEncodingException 
+	 * @throws IOException 
 	 */
-	private void newGame() throws UnsupportedEncodingException{
+	private void newGame() throws IOException{
 		player=new Player();
 		player.getInv().addObserver(frame.getTab().getINV());
 		player.getStats().addObserver(frame.getTab().getStats());
@@ -176,7 +195,7 @@ public class Controller implements ActionListener{
 	 * @throws ClassNotFoundException 
 	 */
 	private void login() throws ClassNotFoundException, IOException{
-		if(profile.tryLogin(frame.getLogin().getNameField().getText(), frame.getLogin().getPwField().getPassword().toString())){
+		if(profile.tryLogin(frame.getLogin().getNameField().getText(), frame.getLogin().getPwField().getText().toString())){
 			frame.login();
 		}else frame.getLogin().failLogin();
 	}
@@ -185,8 +204,13 @@ public class Controller implements ActionListener{
 	 * @throws UnsupportedEncodingException 
 	 */
 	private void createProfile() throws UnsupportedEncodingException{
-		if(profile.newUser(frame.getLogin().getNameField().getText(), frame.getLogin().getPwField().getPassword().toString())){
-			newGame();
+		if(profile.newUser(frame.getLogin().getNameField().getText(), frame.getLogin().getPField().getText().toString())){
+			try {
+				newGame();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}else frame.getLogin().failCreate();
 		
 	}
@@ -285,8 +309,8 @@ public class Controller implements ActionListener{
 			else spawnMonster(new Monster(FileConfig.monsterfile,"M4"));
 		}
 		if(id.equals("P5")){
-			if(player.getInv().has("I1")){
-				frame.getConsole().showText(Puzzle.solve("P1"));
+			if(player.getInv().has("I01")){
+				frame.getConsole().showText(Puzzle.solve("P5"));
 				player.getInv().add(Artifactory.newArtifact("I4"));
 				player.getInv().add(Artifactory.newArtifact("W3"));
 				player.getInv().add(Artifactory.newArtifact("C0"));
@@ -394,6 +418,10 @@ public class Controller implements ActionListener{
 		
 		if(!rooms.getPuzzle().equals(" "))Puzzle.start(rooms.getPuzzle());
 		frame.getConsole().scan();//show itemlist and pickup buttons
+		String[] itemNames= new String[rooms.getItemDrop().size()];
+		int n=0;
+		while(n<rooms.getItemDrop().size()){itemNames[n]=rooms.getItemDrop().get(n).getName();n++;}
+		frame.getConsole().updatePickupList(itemNames);
 	}
 	/**
 	 * initiate an attack exchange where the player attacks the monster and then the monster attacks the player

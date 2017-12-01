@@ -30,11 +30,11 @@ public class Inventory extends Observable implements Serializable{
 	public void updateObservers(){
 		String[] names[]=new String[3][20];
 		int n=0;
-		while(n<items.size()){names[0][n]=items.get(n).getName();}
+		while(n<items.size()){names[0][n]=items.get(n).getName();n++;}
 		n=0;
-		while(n<weapons.size()){names[1][n]=weapons.get(n).getName();}
-		n=0;
-		while(n<usables.size()){names[2][n]=usables.get(n).getName();}
+		while(n<weapons.size()){names[1][n]=weapons.get(n).getName();n++;}
+		n=0;System.out.println(usables.size());
+		while(n<usables.size()){names[2][n]=usables.get(n).getName();n++;}
 		observer.update(this, names);
 	}
 
@@ -47,6 +47,7 @@ public class Inventory extends Observable implements Serializable{
 	 * @return
 	 */
 	public Artifact getArtifact(char tab,int index){
+		if(index<0)return null;
 		if(tab=='i')return items.get(index);
 		if(tab=='w')return weapons.get(index);
 		if(tab=='c')return usables.get(index);
@@ -57,10 +58,10 @@ public class Inventory extends Observable implements Serializable{
 	 * @param a
 	 */
 	public void add(Artifact a){
-		if(a==null)return;
+		if(a==null){System.out.println("add Fail");return;}
 		if(a.getType()=='i')items.add((Item)a);
 		if(a.getType()=='w')weapons.add((Weapon)a);
-		if(a.getType()=='c')usables.add((Usable)a);
+		if(a.getType()=='c'){usables.add((Usable)a);System.out.println("add use "+a.getName());}
 		updateObservers();
 	}
 	/**

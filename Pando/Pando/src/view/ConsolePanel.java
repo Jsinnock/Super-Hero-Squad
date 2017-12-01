@@ -146,13 +146,15 @@ public class ConsolePanel extends JPanel {
 		pickup.setVisible(true);
 	}
 	public void hideNav(){
-		navPanel.setVisible(true);
+		navPanel.setVisible(false);
 	}
 
 	//scan room
 	public void updatePickupList(String[] itemNames){
-		itemDropList.setListData(itemNames);
-		
+		interaction.remove(itemDropList);
+		itemDropList=new JList<String>(itemNames);
+		interaction.add(itemDropList);
+
 		}
 	public void updatePuz(String[] puzOptions){
 		int n=0;

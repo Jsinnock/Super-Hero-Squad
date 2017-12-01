@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
@@ -19,6 +20,7 @@ public class InvPanel extends JPanel implements Observer {
 		
 	private JPanel listPanel=new JPanel();
 	private JList<String> itemList=new JList<String>(),wpnList=new JList<String>(),useList=new JList<String>();
+	private JScrollPane lsi=new JScrollPane(itemList),lsw=new JScrollPane(wpnList),lsu=new JScrollPane(useList);
 	
 	private JPanel bottomPanel=new JPanel();
 	private JButton use=new JButton(),examine=new JButton("examine"),drop=new JButton("Drop");
@@ -31,9 +33,16 @@ public class InvPanel extends JPanel implements Observer {
 		topPanel.add(itemTab);
 		topPanel.add(wpnTab);
 		topPanel.add(useTab);
-		listPanel.add(itemList);
-		listPanel.add(wpnList);
-		listPanel.add(useList);
+		
+		listPanel.add(lsi);
+		listPanel.add(lsw);
+		lsw.setVisible(false);
+		listPanel.add(lsu);
+		lsu.setVisible(false);
+		listPanel.setPreferredSize(new Dimension(300,150));
+		wpnList.setPreferredSize(new Dimension(300,150));
+		itemList.setPreferredSize(new Dimension(300,150));
+		useList.setPreferredSize(new Dimension(300,150));
 		bottomPanel.add(use);
 		bottomPanel.add(examine);
 		bottomPanel.add(drop);
@@ -45,26 +54,26 @@ public class InvPanel extends JPanel implements Observer {
 		
 		toItemTab=new ActionListener(){public void actionPerformed(ActionEvent e){
 			tab='i';
-			wpnList.setVisible(false);
-			useList.setVisible(false);
-			itemList.setVisible(false);
+			lsw.setVisible(false);
+			lsu.setVisible(false);
+			lsi.setVisible(true);
 			use.setVisible(false);
 			drop.setVisible(false);
 		}};
 		toWpnTab=new ActionListener(){public void actionPerformed(ActionEvent e){
 			tab='w';
-			wpnList.setVisible(true);
-			useList.setVisible(false);
-			itemList.setVisible(false);
+			lsw.setVisible(true);
+			lsu.setVisible(false);
+			lsi.setVisible(false);
 			use.setVisible(true);
 			use.setText("Equip");
 			drop.setVisible(false);
 		}};
 		toUseTab=new ActionListener(){public void actionPerformed(ActionEvent e){
 			tab='c';
-			wpnList.setVisible(false);
-			useList.setVisible(false);
-			itemList.setVisible(true);
+			lsw.setVisible(false);
+			lsi.setVisible(false);
+			lsu.setVisible(true);
 			use.setVisible(true);
 			use.setText("Use");
 			drop.setVisible(true);
@@ -80,10 +89,17 @@ public class InvPanel extends JPanel implements Observer {
 	}
 	
 	public void update(Observable o,Object names){
-		String s[][]=(String[][])names;
-		itemList.setListData(s[0]);
-		wpnList.setListData(s[1]);
-		useList.setListData(s[2]);
+		String[] s[]=(String[][])names;System.out.println(s[2][0]);
+		DefaultListModel<String> l0=new DefaultListModel<String>(),l1=new DefaultListModel<String>(),l2=new DefaultListModel<String>();
+		int n=0;
+		while(n<s[0].length){l0.addElement(s[0][n]);n++;}
+		n=0;
+		while(n<s[0].length){l1.addElement(s[1][n]);n++;}
+		n=0;
+		while(n<s[0].length){l2.addElement(s[2][n]);n++;}
+		itemList=new JList<String>(l0);
+		wpnList=new JList<String>(l1);
+		useList=new JList<String>(l2);
 		
 	}
 	public JButton getItemTab(){return itemTab;}

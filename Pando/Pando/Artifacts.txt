@@ -1,6 +1,6 @@
 ﻿Artifacts
 
-I0;;Piece of alien meteorite;;Part of an alien meteorite that the crew excavated.
+I00;;Piece of alien meteorite;;Part of an alien meteorite that the crew excavated.
 I01;;Captain’s Key;;A metal key used to unlock something.
 I2;;Blue Vial;;A vial similar to the ones in the DNA Library, it glows light blue
 I3;;Pink Vial;;A vial similar to the ones in the DNA Library, it glows bright pink
@@ -10,7 +10,7 @@ I6;;Mysterious key;;A metal key that must open a door.
 I7;;X Files;;Recorded documentation of all experiments and research done while in space. Most importantly it contains reports on events leading up to the virus spreading throughout the ship.
 I8;;Alien X;;A powerful allergen that instantly kills one’s immune system and their whole well-being, mutating them into something inhuman.
 I9;;Hazmat Suit;;A full-body suit designed to keep harmful toxins away from the wearer. The face mask is missing, however.
-I10;;Gas Mask A mask that goes over the wearer’s head and filters out all harmful substances in the air.
+I10;;Gas Mask;;A mask that goes over the wearer’s head and filters out all harmful substances in the air.
 I11;;Demon’s Bane Flower;;A beautiful flower that seems to survive unattached to the ground, the veins running through its petals give a faint glow as a heavenly scent fills the room
 I12;;Gold Vial;;A vial similar to the ones in the DNA Library, it glows golden yellow
 I13;;Mysterious vial;;A special vial coated in a mysterious substance

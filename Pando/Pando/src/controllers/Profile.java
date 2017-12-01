@@ -9,6 +9,7 @@ public class Profile {
 
 	private String password;
 	private File saveFile;
+	private File otherFile;
 
 	/**
 	 * create a new profile object
@@ -29,16 +30,17 @@ public class Profile {
 	 * @throws ClassNotFoundException 
 	 */
 	public boolean tryLogin(String name,String word) throws IOException, ClassNotFoundException{
+		otherFile=new File(name+".pr");
 		saveFile=new File(name+".bi");
-		if(saveFile.exists()){
-			FileInputStream i=new FileInputStream(saveFile);
-			ObjectInputStream in=new ObjectInputStream(i);
-			int v=in.readInt();
-			byte[] s=new byte[v];
-			in.read(s);
-			String p=in.readUTF();
+		if(otherFile.exists()){
+			FileInputStream i=new FileInputStream(otherFile);
+			DataInputStream d=new DataInputStream(new BufferedInputStream(i));
+			String p=d.readUTF();
 			System.out.println(p);
-			in.close();
+			System.out.println(word);
+
+			System.out.println(word.getBytes("UTF-8"));
+			d.close();
 			i.close();
 			if(p.equals(word)){
 				password=p;
@@ -55,6 +57,7 @@ public class Profile {
 	 */
 	public boolean newUser(String name,String word){
 		saveFile=new File(name+".bi");
+		otherFile=new File(name+".pr");
 		if(saveFile.exists())return false;
 		else {
 			password=word;
@@ -65,18 +68,23 @@ public class Profile {
 	/**
 	 * retrieve co,room,progress,stats,inventory from the player, and write them to a binary file
 	 * @return  false if the save didnt work
-	 * @throws UnsupportedEncodingException 
+	 * @throws IOException 
 	 */
-	public boolean save(Player player,String roomID) throws UnsupportedEncodingException{
-		FileOutputStream o;
+	public boolean save(Player player,String roomID) throws IOException{
+		FileOutputStream o,oo;
 		ObjectOutputStream out;
-		byte[] pass=password.getBytes("UTF-8"),r=roomID.getBytes("UTF-8");
-		try {	o = new FileOutputStream(saveFile,false);
-			try { out=new ObjectOutputStream(o);
-			out.writeInt(pass.length);
-				out.write(pass);
-				out.writeInt(r.length);
-				out.write(r);
+	
+		//byte[] pass=password.getBytes("UTF-8"),r=roomID.getBytes("UTF-8");
+		try {	
+			oo = new FileOutputStream(otherFile);
+			DataOutputStream d=new DataOutputStream(new BufferedOutputStream(oo));
+			d.writeUTF(password);
+			d.writeUTF(roomID);
+			d.close();
+			oo.close();
+			o = new FileOutputStream(saveFile);
+			try { 
+				out=new ObjectOutputStream(o);
 				out.writeObject(player.getCO());
 				out.writeObject(player.getInv());
 				out.writeObject(player.getProgress());
@@ -93,22 +101,25 @@ public class Profile {
 	 * read the data from the binary file and return it
 	 * @return
 	 * @throws ClassNotFoundException
+	 * @throws IOException 
 	 */
-	public SaveData load() throws ClassNotFoundException{
-		FileInputStream i;
+	public SaveData load() throws ClassNotFoundException, IOException{
+		FileInputStream i,ii;
 		ObjectInputStream in;
-		try {	i= new FileInputStream(saveFile);
+		try {	ii= new FileInputStream(otherFile);
+		DataInputStream d=new DataInputStream(new BufferedInputStream(ii));
+		d.readUTF();//System.out.println(d);
+		String s=d.readUTF();System.out.println(s);
+		d.close();
+		ii.close();
+		i= new FileInputStream(saveFile);
 			try {	in=new ObjectInputStream(i);
-			SaveData s;
-			int l=in.readInt();//skip the first object
-			in.read(new byte[l]);
-			l=in.readInt();
-		
-			s=new SaveData(in.readUTF(),(CombatObject)in.readObject(),
+			SaveData sd;
+			sd=new SaveData(s,(CombatObject)in.readObject(),
 					(Inventory)in.readObject(),(Progress)in.readObject(),(Stats)in.readObject());
 			in.close();
 			i.close();
-			return s;
+			return sd;
 			} catch (IOException e) {e.printStackTrace();}
 		} catch (FileNotFoundException e) {e.printStackTrace();}
 		return null;
@@ -118,4 +129,8 @@ public class Profile {
 	 * @return false if the file does not exist so the controller knows to save a file for a newly created account
 	 */
 	public boolean exists(){return saveFile.exists();}
+	@SuppressWarnings("serial")
+	private class PassRoom implements Serializable{
+		String[] s = new String[2];
+	}
 }

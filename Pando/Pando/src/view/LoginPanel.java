@@ -76,6 +76,7 @@ public final class LoginPanel extends JPanel{
 	public Label getMessage() {return message;}
 	public JTextField getNameField() {return nameField;}
 	public JPasswordField getPwField() {return pwField;}
+	public JTextField getPField() {return pField;}
 	public JButton getEnter() {return enter;}
 	public JButton getCreate(){return create;}
 	public JButton getNewUser() {return newUser;}

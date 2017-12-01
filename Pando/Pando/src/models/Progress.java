@@ -194,7 +194,7 @@ public class Progress implements Serializable{
 	private int countRooms(){
 		int i=0,c=0;
 		while(i<42){
-			if(roomEntered!=null)c++;
+			if(roomEntered[i]!=null)c++;
 			i++;
 		}return c;
 	}

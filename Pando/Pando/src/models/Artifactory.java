@@ -9,6 +9,8 @@ public class Artifactory {
 	//creates artifacts
 
 	public static Artifact newArtifact(String id){
+		System.out.println(id);
+
 		if(id.startsWith("W"))return new Weapon(FileConfig.artifactFile,id);
 		if(id.startsWith("C")){return new Usable(FileConfig.artifactFile,id);}
 		if(id.startsWith("I"))return new Item(FileConfig.artifactFile,id);
