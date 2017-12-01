@@ -1,0 +1,28 @@
+Artifacts
+
+I0;;Piece of alien meteorite;;Part of an alien meteorite that the crew excavated.
+I01;;Captain’s Key;;A metal key used to unlock something.
+I2;;Blue Vial;;A vial similar to the ones in the DNA Library, it glows light blue
+I3;;Pink Vial;;A vial similar to the ones in the DNA Library, it glows bright pink
+I4;;Reinforced armor;;A set of fine leather armor with metal plates reinforcing vulnerable areas.
+I5;;
+I6;;Mysterious key;;A metal key that must open a door.
+I7;;X Files;;Recorded documentation of all experiments and research done while in space. Most importantly it contains reports on events leading up to the virus spreading throughout the ship.
+I8;;Alien X;;A powerful allergen that instantly kills one’s immune system and their whole well-being, mutating them into something inhuman.
+I9;;Hazmat Suit;;A full-body suit designed to keep harmful toxins away from the wearer. The face mask is missing, however.
+I10;;Gas Mask A mask that goes over the wearer’s head and filters out all harmful substances in the air.
+I11;;Demon’s Bane Flower;;A beautiful flower that seems to survive unattached to the ground, the veins running through its petals give a faint glow as a heavenly scent fills the room
+I12;;Gold Vial;;A vial similar to the ones in the DNA Library, it glows golden yellow
+I13;;Mysterious vial;;A special vial coated in a mysterious substance
+I14;;Office Key;;Looks like a normal key
+
+C0;;Med Pack;;Item that restores health. Usually dropped by monsters or found throughout the ship.;;10
+C1;;Strength Potion;;A small glass tube with a thick, luminescent green liquid in it.;;20
+C2;;Flash Grenade;;A grenade that releases a blinding light.;;6
+C3;;Ammo;;Ammunition for the energy blaster. It looks like a battery pack;;1
+
+W0;;Syringe;;A syringe half filled with a mysterious green goo.;;4
+W1;;Wrench;;When not in the toolbag, the rusty and trusty wrench can be a heavy hitting weapon.;;8
+W2;;Knife;;A 9.5 inch kitchen knife specifically used to cut food, but can do serious damage when used as a weapon.;;12
+W3;;Longsword;;A long, single-sided straight sword with a pointed tip. It is very sharp.;;20
+W4;;Energy Blaster;;An experimental weapon originally made for mining.;;24

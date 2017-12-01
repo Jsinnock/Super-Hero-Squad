@@ -1,0 +1,18 @@
+Monsters
+
+
+M1;;Grotesque;;A mammoth-sized being with a belly bigger than his appetite. Bile is seen running down his face and stomach.;;140,16,40;;0.2;;0.8;;I13
+
+M2;;Aberrant Doctor;;A humanoid figure that doesn’t seem so human anymore. Wearing a respirator mask and bloody scrubs.;;100,8,20;;0.4;;0.8;;C0
+
+M3;;Deranged Scientist;;A man wearing a white lab coat with dark red stains splattered on the front. His arms seem to be way too long for his body, and they are very thin; it’s almost like he had some sort of rapid growth mutation. His pupils are tiny black dots in a sea of red;;Energy Blaster;;100,6,20;;0.6;;0.8;;C0
+
+M4;;Prowler;;A four-legged creature with slick, black skin and patches of white hair. It resembles the form of a jaguar, but it has no eye sockets and a giant mouth. Its teeth look like they could crush your bones easily, and it has long, razor sharp claws the color of obsidian.;;120,12,36 0.75;;0.8;;C0
+
+M5;;Brawler;;A mutated crew member with a hump on its back, walking on two legs. It has facial appearance of a wild boar and the body type of a gorilla.;;120,12,40;;0.8;;0.8;; 
+
+M6;;Bass Face;;A mutated chef, still fully dressed in its attire, with its mouth unnaturally opened as wide to the point that it could seemingly swallow someone's entire head whole. Its teeth are similar to piranha’s teeth.;;110,6,28;;0.8;;0.8;;C0
+
+M7;;Chernabog;;A monstrous bat like creature, it’s fur wild and intimidating almost like a mane framing its demonic wolf like face. It’s arms extending into large expanses of web-like skin tipped with razor sharp claws. It lurks on the ceilings and is sensitive to light.;;100,8,32;;0.8;;0.7;;I14
+
+M8;;Wendigo;;A truly immense ape like creature but more demonic and otherworldly, with twisted antlers extending from its head. It seems disturbingly intelligent and you can feel the malice radiating from it, perhaps there’s something that could weaken it.;;120,14,40;;1.f;;0.5;; 
