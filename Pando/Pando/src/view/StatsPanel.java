@@ -11,11 +11,11 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class StatsPanel extends JPanel implements Observer{
 	
-	private JPanel stat[]= {new JPanel()};
+	private JPanel stat[]= {new JPanel(),new JPanel(),new JPanel()};
 
-	private Label statName[]={new Label("Stat Name: ")};
+	private Label statName[]={new Label("Health: "),new Label("Rooms Discovered: "),new Label("Kills: ")};
 
-	private Label statValue[]={new Label("Value")};
+	private Label statValue[]={new Label("Value"),new Label("Value"),new Label("Value")};
 	
 	public StatsPanel(){
 		this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
@@ -28,7 +28,11 @@ public class StatsPanel extends JPanel implements Observer{
 		}
 	}
 	public void update(Observable o,Object info){
-		statValue[0].setText(info.toString());
+		System.out.println("J");
+		int[] i = (int[])info;
+		statValue[0].setText(Integer.toString(i[0]));
+		statValue[1].setText(Integer.toString(i[1]));
+		statValue[2].setText(Integer.toString(i[2]));
 	}
 
 }

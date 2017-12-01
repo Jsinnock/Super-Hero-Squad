@@ -28,7 +28,7 @@ public class Inventory extends Observable implements Serializable{
 	}
 
 	public void updateObservers(){
-		String[] names[]=new String[][]{};
+		String[] names[]=new String[3][20];
 		int n=0;
 		while(n<items.size()){names[0][n]=items.get(n).getName();}
 		n=0;
@@ -57,6 +57,7 @@ public class Inventory extends Observable implements Serializable{
 	 * @param a
 	 */
 	public void add(Artifact a){
+		if(a==null)return;
 		if(a.getType()=='i')items.add((Item)a);
 		if(a.getType()=='w')weapons.add((Weapon)a);
 		if(a.getType()=='c')usables.add((Usable)a);
@@ -69,6 +70,7 @@ public class Inventory extends Observable implements Serializable{
 	 * @return the usable that was removed
 	 */
 	public Usable drop(int id){
+		if(id<0)return null;
 		Usable u=usables.get(id);
 		usables.remove(id);
 		updateObservers();

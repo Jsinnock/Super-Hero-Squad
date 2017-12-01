@@ -1,4 +1,4 @@
-Artifacts
+﻿Artifacts
 
 I0;;Piece of alien meteorite;;Part of an alien meteorite that the crew excavated.
 I01;;Captain’s Key;;A metal key used to unlock something.
@@ -21,8 +21,8 @@ C1;;Strength Potion;;A small glass tube with a thick, luminescent green liquid i
 C2;;Flash Grenade;;A grenade that releases a blinding light.;;6
 C3;;Ammo;;Ammunition for the energy blaster. It looks like a battery pack;;1
 
-W0;;Syringe;;A syringe half filled with a mysterious green goo.;;4
-W1;;Wrench;;When not in the toolbag, the rusty and trusty wrench can be a heavy hitting weapon.;;8
-W2;;Knife;;A 9.5 inch kitchen knife specifically used to cut food, but can do serious damage when used as a weapon.;;12
+W0;;Syringe;;A syringe half filled with a mysterious green goo.;;5
+W1;;Wrench;;When not in the toolbag, the rusty and trusty wrench can be a heavy hitting weapon.;;10
+W2;;Knife;;A 9.5 inch kitchen knife specifically used to cut food, but can do serious damage when used as a weapon.;;15
 W3;;Longsword;;A long, single-sided straight sword with a pointed tip. It is very sharp.;;20
-W4;;Energy Blaster;;An experimental weapon originally made for mining.;;24
+W4;;Energy Blaster;;An experimental weapon originally made for mining.;;25

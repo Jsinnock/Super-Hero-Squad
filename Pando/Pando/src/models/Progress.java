@@ -10,11 +10,10 @@ import controllers.FileConfig;
  */
 @SuppressWarnings("serial")
 public class Progress implements Serializable{
-	//puzzles solved
-	//private boolean doorsLocked=false;
+
 	private boolean code1=false,code2=false,plasticTray=false,
 			puz[]=new boolean[9];
-	
+	private Stats observer;
 	
 	//save data for rooms
 	private String[] roomEntered;//save each room id for every room that has been entered
@@ -50,6 +49,11 @@ public class Progress implements Serializable{
 		monsterDefeated=md;
 		escapedMonsters=em;
 		monster=m;
+	}
+	
+	
+	public void addObserver(Stats o){
+		observer=o;
 	}
 	
 	/**
@@ -170,7 +174,7 @@ public class Progress implements Serializable{
 					//escapedMonsters[escapedMonsters.length]=id;
 				}
 			}
-		}
+		}observer.updateRooms(countRooms());
 	}
 	/**
 	 * get the index(in the list of saved rooms) of a specific room
@@ -182,6 +186,17 @@ public class Progress implements Serializable{
 			if(roomEntered[n]!=null)if(roomEntered[n].equals(room))return n;
 			n++;
 		}return -1;
+	}
+	/**
+	 * count the number of rooms that have been entered
+	 * @return
+	 */
+	private int countRooms(){
+		int i=0,c=0;
+		while(i<42){
+			if(roomEntered!=null)c++;
+			i++;
+		}return c;
 	}
 	public boolean isCode1() {return code1;}
 	public void setCode1(boolean code1) {this.code1 = code1;}

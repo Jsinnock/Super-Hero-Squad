@@ -52,7 +52,7 @@ public class Room {
 			else monster=mon;}
 		if(items==null){//populate item field with default data from file
 			itemDrop=new LinkedList<Artifact>();
-			itemDrop.add(Artifactory.newArtifact(data[7]));
+			if(Artifactory.newArtifact(data[7])!=null)itemDrop.add(Artifactory.newArtifact(data[7]));
 		}else itemDrop=items;
 	}
 	

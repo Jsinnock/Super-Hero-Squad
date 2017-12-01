@@ -61,11 +61,16 @@ public class Controller implements ActionListener{
 				||(e.getSource()==frame.getTab().getINV().getWpnTab())
 				||(e.getSource()==frame.getTab().getINV().getUsablesTab())
 			){player.getInv().updateObservers();}
-		if(e.getSource()==frame.getTab().getStatButton()){player.getStats().updateObservers();}
+		if(e.getSource()==frame.getTab().getStatButton()){player.getStats().notifyO();}
 
 
 		//Buttons in the command menu
-		if(e.getSource()==frame.getTab().getCMD().getSaveButton()){save();}
+		if(e.getSource()==frame.getTab().getCMD().getSaveButton()){try {
+			save();
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}}
 		if(e.getSource()==frame.getTab().getCMD().getLoadButton()){try {load();} catch (ClassNotFoundException e1) {e1.printStackTrace();}}
 		if(e.getSource()==frame.getTab().getCMD().getExitButton()){exitGame();}
 		
@@ -84,9 +89,19 @@ public class Controller implements ActionListener{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}}
-		if(e.getSource()==frame.getLogin().getCreate()){createProfile();}
+		if(e.getSource()==frame.getLogin().getCreate()){try {
+			createProfile();
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}}
 		
-		if(e.getSource()==frame.getStart().getNewGame()){newGame();}
+		if(e.getSource()==frame.getStart().getNewGame()){try {
+			newGame();
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}}
 		if(e.getSource()==frame.getStart().getLoadGame()){try {
 			load();
 		} catch (ClassNotFoundException e1) {
@@ -102,8 +117,9 @@ public class Controller implements ActionListener{
 	 * add current room to progress(otherwise this is done when a new room is entered)
 	 * record id of current room
 	 * write progress,inventory,co,and stats objects to binary file and save it
+	 * @throws UnsupportedEncodingException 
 	 */
-	private void save(){
+	private void save() throws UnsupportedEncodingException{
 		player.getProgress().addRoom(rooms.getID(), rooms.getItemDrop(), !battle, rooms.getMonster());
 		if(profile.save(player,rooms.getID())){frame.getConsole().showText("Save Successful");
 		}else frame.getConsole().showText("Save Unsuccessful");
@@ -129,8 +145,9 @@ public class Controller implements ActionListener{
 	 * start in room 1 
 	 * launch the game gui
 	 * make a save file only if one does not already exist
+	 * @throws UnsupportedEncodingException 
 	 */
-	private void newGame(){
+	private void newGame() throws UnsupportedEncodingException{
 		player=new Player();
 		player.getInv().addObserver(frame.getTab().getINV());
 		player.getStats().addObserver(frame.getTab().getStats());
@@ -138,6 +155,7 @@ public class Controller implements ActionListener{
 		frame.start();
 		if(!profile.exists())save();//automatically save only if there is no save file
 		updateConsole();
+		frame.getConsole().showRoomText();
 	}
 	/**
 	 * Hide the game gui and show the startup gui
@@ -164,11 +182,11 @@ public class Controller implements ActionListener{
 	}
 	/**
 	 * Start a new game with a new user account, and save the new account
+	 * @throws UnsupportedEncodingException 
 	 */
-	private void createProfile(){
+	private void createProfile() throws UnsupportedEncodingException{
 		if(profile.newUser(frame.getLogin().getNameField().getText(), frame.getLogin().getPwField().getPassword().toString())){
 			newGame();
-			save();
 		}else frame.getLogin().failCreate();
 		
 	}
@@ -187,7 +205,7 @@ public class Controller implements ActionListener{
 				if(monsterAtk())getKilled();
 				frame.getConsole().hideNav();//hide nav buttons
 				return;//don't change room
-			}else frame.getConsole().updateAttack(false);
+			}
 		}
 		
 		//locked doors
@@ -204,7 +222,8 @@ public class Controller implements ActionListener{
 			frame.getConsole().showText("The door is blocked");
 			return;
 		}
-		
+		frame.getConsole().updateAttack(false);
+		battle=false;
 		player.getProgress().addRoom(newRoom, rooms.getItemDrop(), !battle,rooms.getMonster());//update the roomsEntered in the progress object
 		//if the room has already been entered, update the room object with the values saved in progress
 		rooms.enterRoom(newRoom, player.getProgress().getItems(newRoom), player.getProgress().getMonster(newRoom));
@@ -235,6 +254,7 @@ public class Controller implements ActionListener{
 		frame.getConsole().updateAttack(false);
 		frame.getConsole().updateNav(exits);
 		frame.getConsole().updateInteraction();
+		frame.getMap().update(rooms.getName());
 	}
 	/**Evaluates the logic for each puzzle option
 	 * Called when one of the puzzle options is selected
@@ -323,7 +343,7 @@ public class Controller implements ActionListener{
 	 */
 	private void winBattle(){
 		Artifact a=rooms.getMonster().getItem();
-		rooms.getItemDrop().add(a);			
+		if(a!=null)rooms.getItemDrop().add(a);			
 		if(rooms.getItemDrop().size()>0){
 		String[] s=new String[rooms.getItemDrop().size()];
 		int n=0;
@@ -335,6 +355,7 @@ public class Controller implements ActionListener{
 		rooms.kill();
 		frame.getConsole().updateAttack(false);
 		updateConsole();
+		player.getStats().getKill();
 		battle=false;
 	}
 	/**
@@ -415,9 +436,14 @@ public class Controller implements ActionListener{
 		}
 		if(frame.getTab().getINV().getTab()=='c'){
 			Usable u=player.getInv().drop(frame.getTab().getINV().getSelected());
+			if(u==null)return;
 			if(u.getID().equals("C0"))player.getCO().setHealth(100);
 			if(u.getID().equals("C1"))player.getCO().setDmg(u.getValue());
-			if(u.getID().equals("C3"))if(rooms.getMonster()!=null)rooms.getMonster().getCO().setArmor(0);;
+			if(u.getID().equals("C2")){
+				if(rooms.getMonster()!=null)rooms.getMonster().getCO().setArmor(0);
+				else player.getInv().add(u);//can't use it if there is no monster
+			}
+			
 		}
 	}
 	
@@ -447,6 +473,6 @@ public class Controller implements ActionListener{
 	 * set the value of that slot to zero in the inventory
 	 * 
 	 */
-	private void dropItem(){rooms.getItemDrop().add( player.getInv().drop( frame.getTab().getINV().getSelected() ) );}
+	private void dropItem(){if(frame.getTab().getINV().getSelected()>=0)rooms.getItemDrop().add( player.getInv().drop( frame.getTab().getINV().getSelected() ) );}
 
 }

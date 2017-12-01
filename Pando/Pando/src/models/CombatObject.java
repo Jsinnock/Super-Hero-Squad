@@ -1,14 +1,16 @@
 package models;
 
 import java.io.Serializable;
+import java.util.Observable;
 
 /**
  * Used to implement combat behavior
  *
  */
 @SuppressWarnings("serial")
-public class CombatObject implements Serializable{
+public class CombatObject extends Observable implements Serializable{
 
+	private Stats observer;
 	private int health,armor,damage,wpnDmg;
 
 	CombatObject(int hp,int amr, int dmg){
@@ -37,9 +39,15 @@ public class CombatObject implements Serializable{
 		if(dmg>getArmor())return dmg-getArmor();
 		else return 0;
 	}
-	
+	public void addObserver(Stats o){
+		observer=o;
+		observer.updateStats(this.health);
+	}
 	public int getHealth() {return health;}
-	public void setHealth(int health) {this.health = health;}
+	public void setHealth(int health) {
+		this.health = health;
+		if(observer!=null)observer.updateStats(this.health);
+		}
 	public int getArmor() {return armor;}
 	public void setArmor(int armor) {this.armor = armor;}
 	public int getDamage() {return damage+wpnDmg;}

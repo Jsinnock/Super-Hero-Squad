@@ -16,8 +16,10 @@ public class Player {
 	public Player(){
 		inventory=new Inventory();
 		stats=new Stats();
-		co=new CombatObject(100,10,20);
+		co=new CombatObject(100,10,50);
 		p=new Progress();
+		co.addObserver(stats);
+		p.addObserver(stats);
 	}
 	/**
 	 * Create a player object using data from a save file
@@ -28,6 +30,8 @@ public class Player {
 		co=s.getCo();
 		stats=s.getStats();
 		p=s.getProgress();
+		co.addObserver(stats);
+		p.addObserver(stats);
 	}
 	
 	public Stats getStats(){return stats;}

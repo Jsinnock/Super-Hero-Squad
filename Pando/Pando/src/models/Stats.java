@@ -8,45 +8,34 @@ import java.util.Observer;
 @SuppressWarnings("serial")
 public class Stats extends Observable implements Serializable{
 
-	private Observer observer;
+	//private Observer observer;
 
-	private boolean roomsEntered[];
+	private int health,roomsEntered,monstersDefeated;
 
-	private boolean monstersDefeated[];
-	
-	
 	public Stats(){
-		roomsEntered=new boolean[]{
-				true,false,false,false,false,false,false,false,
-				false,false,false,false,false,false,false,false,
-				false,false,false,false,false,false,false,false,
-				false,false,false,false,false,false,false,false,
-		};
-		monstersDefeated=new boolean[]{
-				false,false,false,false,false,false,false,false,
-			false,false,false,false,false,false,false,false,
-			false,false,false,false,false,false,false,false,
-			false,false,false,false,false,false,false,false,
-		};
-	}
-	public Stats(StatInfo info){
-		
-	}
-	public void addObserver(Observer obs){
-		observer=obs;
+		roomsEntered=0;
+		monstersDefeated=0;
 	}
 	
-	public void updateObservers(){
-		observer.update(this, info());
+	private int[] info(){
+		return new int[]{health,roomsEntered,monstersDefeated};
 	}
-	private StatInfo info(){
-		int n=0;
-		int d=0;
-		while(0>n){
-			if(monstersDefeated[n]==true)d++;
-			n++;
-		}
-		return new StatInfo(d);
+	public void updateRooms(int i){
+		roomsEntered=i;
+		notifyO();
 	}
-
+	public void getKill(){
+		monstersDefeated++;
+		notifyO();
+	}
+	
+	public void updateStats(int hp) {
+		health=hp;
+		notifyO();
+	}
+	public void notifyO(){
+		this.setChanged();
+		System.out.println("j");
+		notifyObservers(info());
+	}
 }

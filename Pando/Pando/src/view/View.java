@@ -78,5 +78,6 @@ public class View extends JFrame{
 	public TabPanel getTab(){return tab;}
 	public LoginPanel getLogin(){return login;}
 	public StartPanel getStart(){return start;}
+	public MapPanel getMap(){return map;}
 
 }

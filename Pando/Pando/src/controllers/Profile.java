@@ -33,7 +33,11 @@ public class Profile {
 		if(saveFile.exists()){
 			FileInputStream i=new FileInputStream(saveFile);
 			ObjectInputStream in=new ObjectInputStream(i);
-			String p=(String)in.readObject();
+			int v=in.readInt();
+			byte[] s=new byte[v];
+			in.read(s);
+			String p=in.readUTF();
+			System.out.println(p);
 			in.close();
 			i.close();
 			if(p.equals(word)){
@@ -61,14 +65,18 @@ public class Profile {
 	/**
 	 * retrieve co,room,progress,stats,inventory from the player, and write them to a binary file
 	 * @return  false if the save didnt work
+	 * @throws UnsupportedEncodingException 
 	 */
-	public boolean save(Player player,String roomID){
+	public boolean save(Player player,String roomID) throws UnsupportedEncodingException{
 		FileOutputStream o;
 		ObjectOutputStream out;
+		byte[] pass=password.getBytes("UTF-8"),r=roomID.getBytes("UTF-8");
 		try {	o = new FileOutputStream(saveFile,false);
 			try { out=new ObjectOutputStream(o);
-				out.writeChars(password);
-				out.writeChars(roomID);
+			out.writeInt(pass.length);
+				out.write(pass);
+				out.writeInt(r.length);
+				out.write(r);
 				out.writeObject(player.getCO());
 				out.writeObject(player.getInv());
 				out.writeObject(player.getProgress());
@@ -92,8 +100,11 @@ public class Profile {
 		try {	i= new FileInputStream(saveFile);
 			try {	in=new ObjectInputStream(i);
 			SaveData s;
-			in.readObject();//skip the first object
-			s=new SaveData((String)in.readObject(),(CombatObject)in.readObject(),
+			int l=in.readInt();//skip the first object
+			in.read(new byte[l]);
+			l=in.readInt();
+		
+			s=new SaveData(in.readUTF(),(CombatObject)in.readObject(),
 					(Inventory)in.readObject(),(Progress)in.readObject(),(Stats)in.readObject());
 			in.close();
 			i.close();
